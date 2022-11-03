@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import CreateForm from './pages/CreateForm';
+import Homepage from './pages/Homepage';
+import './App.css'
+import AllForm from './components/allForms';
+import { useEffect, useState } from 'react';
+import Display from './components/DisplayTest';
 
 function App() {
+
+  const [response, setResponse] = useState()
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/all-form")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setResponse(result)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/create-form" element={<CreateForm />} />
+        <Route path="/all-form" element={<AllForm result = {response}/>} />
+        <Route path="/all-form/:slug" element={<Display result = {response}/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

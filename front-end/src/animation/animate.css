@@ -1,0 +1,53 @@
+.animate {
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+}
+
+@keyframes example {
+    0% {
+        left: 0px;
+        top: -1000px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.animate1 {
+    position: relative;
+    animation-name: example1;
+    animation-duration: 2s;
+}
+
+@keyframes example1 {
+    0% {
+        right: -1000px;
+        top: 0px;
+    }
+
+    100% {
+        right: 0px;
+        top: 0px;
+    }
+}
+
+.animate3 {
+    position: relative;
+    animation-name: example3;
+    animation-duration: 4s;
+}
+
+@keyframes example3 {
+    0% {
+        left: -1000px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
