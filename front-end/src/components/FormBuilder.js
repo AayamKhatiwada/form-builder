@@ -35,7 +35,7 @@ const FormBuilder = () => {
         };
         dispatch(enterJSON(json));
 
-        window.open("http://localhost:3000/all-form");
+        window.open("https://5251-2400-1a00-b030-1376-a5a2-b89b-3a2f-5ea.in.ngrok.io/all-form");
     }
 
     const createQuestion = (type) => {
