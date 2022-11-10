@@ -26,7 +26,7 @@ const AllForm = ({ result }) => {
 
         console.log(array)
         const createQuestion = async () => {
-            let result = await fetch("http://127.0.0.1:8000/api/createQuestion", {
+            let result = await fetch("http://localhost:8000/api/createQuestion", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

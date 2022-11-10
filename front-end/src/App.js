@@ -10,7 +10,7 @@ function App() {
 
   const [response, setResponse] = useState()
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/all-form")
+    fetch("http://localhost:8000/api/all-form")
       .then(res => res.json())
       .then(
         (result) => {
