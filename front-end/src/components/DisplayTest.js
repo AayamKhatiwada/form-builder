@@ -3,6 +3,7 @@ import { StylesManager, Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { useCallback, useState } from 'react';
 import { useParams } from "react-router-dom"
+import { URL } from './url';
 
 StylesManager.applyTheme("defaultV2");
 
@@ -30,7 +31,7 @@ function Display({ result }) {
     console.log(results)
 
     const submitAnswer = async () => {
-      let result = await fetch("http://127.0.0.1:8000/api/submitAnswer", {
+      let result = await fetch(`${URL}/api/submitAnswer`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
