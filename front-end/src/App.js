@@ -10,18 +10,23 @@ import { URL } from './components/url';
 function App() {
 
   const [response, setResponse] = useState()
-  console.log(`${URL}/api/all-form`)
+  // console.log(`${URL}/api/all-form`)
   useEffect(() => {
-    fetch(`${URL}/api/all-form`)
+    fetch(`${URL}/api/all-form`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "1",
+      },
+    })
       .then(res => res.json())
       .then(
         (result) => {
           setResponse(result)
-        },
-        (error) => {
-          console.log(error)
         }
-      )
+      ).catch((error) => {
+        console.log("Error on calling", error)
+      })
   }, [])
 
   return (
