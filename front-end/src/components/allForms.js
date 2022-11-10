@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { URL } from "./url";
 
 const AllForm = ({ result }) => {
 
@@ -26,7 +27,7 @@ const AllForm = ({ result }) => {
 
         console.log(array)
         const createQuestion = async () => {
-            let result = await fetch("http://localhost:8000/api/createQuestion", {
+            let result = await fetch(`${URL}/api/createQuestion`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -5,12 +5,14 @@ import './App.css'
 import AllForm from './components/allForms';
 import { useEffect, useState } from 'react';
 import Display from './components/DisplayTest';
+import { URL } from './components/url';
 
 function App() {
 
   const [response, setResponse] = useState()
+  console.log(`${URL}/api/all-form`)
   useEffect(() => {
-    fetch("http://localhost:8000/api/all-form")
+    fetch(`${URL}/api/all-form`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -27,8 +29,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/create-form" element={<CreateForm />} />
-        <Route path="/all-form" element={<AllForm result = {response}/>} />
-        <Route path="/all-form/:slug" element={<Display result = {response}/>} />
+        <Route path="/all-form" element={<AllForm result={response} />} />
+        <Route path="/all-form/:slug" element={<Display result={response} />} />
       </Routes>
     </BrowserRouter>
   );
