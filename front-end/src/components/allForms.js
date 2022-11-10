@@ -12,7 +12,7 @@ const AllForm = ({ result }) => {
     const surveyJson = useSelector(state => state.json[0])
 
     const gotoForm = (id) => {
-        window.open(`https://f7fe-2400-1a00-b030-1376-a5a2-b89b-3a2f-5ea.in.ngrok.io/all-form/${id}`);
+        window.open(`https://shimmering-cendol-3dbbef.netlify.app/${id}`);
     }
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const AllForm = ({ result }) => {
 
         console.log(array)
         const createQuestion = async () => {
-            let result = await fetch("https://5251-2400-1a00-b030-1376-a5a2-b89b-3a2f-5ea.in.ngrok.io/api/createQuestion", {
+            let result = await fetch("http://127.0.0.1:8000/api/createQuestion", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
