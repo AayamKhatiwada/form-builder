@@ -32,6 +32,7 @@ const AllForm = ({ result }) => {
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json",
+                    "ngrok-skip-browser-warning": "1",
                 },
                 body: JSON.stringify(array)
             });
