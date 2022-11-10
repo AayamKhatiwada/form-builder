@@ -14,7 +14,7 @@ const AllForm = ({ result }) => {
     const surveyJson = useSelector(state => state.json[0])
 
     const gotoForm = (id) => {
-        navigate(`/${id}`);
+        navigate(`/all-form/${id}`);
     }
 
     useEffect(() => {
