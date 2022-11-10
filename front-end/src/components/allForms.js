@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux";
-import Display from "./DisplayTest";
+import { useNavigate } from "react-router-dom";
 
 const AllForm = ({ result }) => {
 
     var increment = 0
     const response = result;
+    const navigate = useNavigate();
 
     const [questionId, setQuestionId] = useState(0)
 
     const surveyJson = useSelector(state => state.json[0])
 
     const gotoForm = (id) => {
-        window.open(`https://shimmering-cendol-3dbbef.netlify.app/${id}`);
+        navigate(`/${id}`);
     }
 
     useEffect(() => {

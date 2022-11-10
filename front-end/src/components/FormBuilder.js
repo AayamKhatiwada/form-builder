@@ -7,11 +7,13 @@ import { generateFormType } from "../utils";
 import Card from "./Card"
 import FormElement from "./FormElement"
 import PreviewForm from "./PreviewForm";
+import { useNavigate } from "react-router-dom";
 
 const FormBuilder = () => {
     const formElements = useSelector(state => state.formElements)
     const json = useSelector(state => state.json[0])
     const dispatch = useDispatch()
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState(json ? json.title : '')
     const [description, setDescription] = useState(json ? json.description : '')
@@ -35,7 +37,7 @@ const FormBuilder = () => {
         };
         dispatch(enterJSON(json));
 
-        window.open("https://shimmering-cendol-3dbbef.netlify.app/all-form");
+        navigate("/all-form");
     }
 
     const createQuestion = (type) => {
